@@ -84,10 +84,10 @@ if(require.main == module) {
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <html_url>', 'URL of index.html')
-	.parse(process.argv);
+    .parse(process.argv);
     
     var outJson = function(checkJson) {
-	console.log(JSON.stringify(checkJson, null, 4));
+        console.log(JSON.stringify(checkJson, null, 4));
     }
     if (program.url) checkHtmlUrl(program.url, program.checks, outJson)
     else if (program.file) checkHtmlFile(program.file, program.checks, outJson)
